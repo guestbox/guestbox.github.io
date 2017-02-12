@@ -48,10 +48,6 @@
   margin-top: 7px;
   font-weight: bold;
 }
-.price::after {
-  content: " / month per user";
-  font-weight: normal;
-}
 hr {
   background-color: #dedede;
   border: none;
@@ -83,8 +79,6 @@ hr {
   content: "\f00c";
 }
 .package li::before {
-  font-family: "FontAwesome";
-  content: "\f00c";
   font-size: 1.3rem;
   color: #F9FF42;
   margin-right: 3px;
@@ -113,6 +107,25 @@ hr {
   top: 6px;
   text-shadow: 0 0 2px #37c5b6;
   font-size: 1.4rem;
+}
+/*bottom package*/
+.mpackage {
+  box-sizing: border-box;
+  width: 401px;
+  height: 380px;
+  border: 3px solid #eeeeee;
+  border-radius: 7px;
+  display: inline-block;
+  padding: 24px;
+  text-align: center;
+  float: left;
+  transition: margin-top 0.5s linear;
+  position: relative;
+  margin-right: 11px;
+}
+.mpackage:hover {
+  margin-top: -30px;
+  transition: margin-top 0.3s linear;
 }
 body {
   overflow-x: hidden;
