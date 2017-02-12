@@ -7,6 +7,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var connect = require('gulp-connect');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -70,9 +71,6 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-// Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
-
 // Configure the browserSync task
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -103,3 +101,19 @@ gulp.task('sass', function() {
             stream: true
         }))
 });
+
+gulp.task('healthytest', function(){
+    console.log('HealthyTest');
+});
+
+gulp.task('connect', function(){
+    connect.server({
+        name: 'Guestbox',
+        root: '.',
+        port: 8888,
+        livereload: true
+    });
+});
+
+// Run everything
+gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy', 'connect']);
